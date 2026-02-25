@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Mathematical Sciences</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="frontpage">
+
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <span class="nav-brand">ALEKSA MILOJEVIĆ</span>
+            <div class="nav-links">
+                <a href="#about" class="active">About</a>
+                <a href="publications/index.html">Publications</a>
+                <a href="expository/index.html">Expository</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header id="about" class="hero">
+            <div class="profile-area">
+                <img src="profile_picture.png" alt="Profile Picture" class="profile-img">
+                <div class="hero-text">
+                    <h1>Aleksa Milojević</h1>
+                    <p class="bio-intro">
+                        Hi! I’m a third-year PhD student at ETH Zurich, advised by Benny Sudakov. I earned my bachelor’s degree in Mathematics at Princeton University.
+                        <br><br>
+                        My research focuses on combinatorics, with occasional excursions into discrete geometry. I am especially interested in extremal and probabilistic combinatorics, Ramsey theory, and incidence geometry.
+                    </p>
+                </div>
+            </div>
+        </header>
+        <section id="publications">
+            <h2>Featured Work</h2>
+            <div class="paper-card frontpage-card">
+                <div class="card-content">
+                    <h3>Gaussian random graphs and Ramsey numbers</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2512.17718">arXiv</a>
+                            <a href="publications/GaussianRamsey.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>We give a simple proof of the recent remarkable exponential improvement for Ramsey lower bounds, obtained by Ma, Shen and Xie. Our key ingredient is an alternative construction based on Gaussian random graphs, which allows us to simplify their analysis significantly. As a consequence of this simpler analysis, we also obtain better quantitative bounds.</p>
+                    </div>
+                </div>
+                <div class="frontpage-thumb-frame frontpage-thumb-frame-1">
+                    <img src="Ramsey_thumbnail_cropped.png" alt="Paper thumbnail" class="paper-thumbnail frontpage">
+                </div>
+            </div>
+            <div class="paper-card frontpage-card">
+                <div class="card-content">
+                    <h3>From small eigenvalues to large cuts, and Chowla's cosine problem</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zhihan Jin, István Tomon and Shengtong Zhang</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2509.03490">arXiv</a>
+                            <a href="publications/Chowla.pdf">PDF</a>
+                            <a href="https://www.quantamagazine.org/networks-hold-the-key-to-a-decades-old-problem-about-waves-20260128/">Quanta</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>We show that there exists an absolute constant \(\gamma > 0\) such that for every \(A \subseteq \mathbb{Z}_{>0}\) we have
+\[
+\min_{x \in [0,2\pi]} \sum_{a \in A} \cos(ax) \leq -\Omega(|A|^\gamma).
+\]
+This gives the first polynomial bound for Chowla's cosine problem from 1965. To show this, we prove structural statements about graphs whose smallest eigenvalue is small in absolute value. As another application, we show that any graph \(G\) with \(m\) edges and no clique of size \(m^{1/2-\delta}\) has a cut of size at least \(m/2 + m^{1/2+\varepsilon}\) for some \(\varepsilon = \varepsilon(\delta) > 0\). This proves a weak version of a celebrated conjecture of Alon, Bollobás, Krivelevich, and Sudakov. Our proofs are based on novel spectral and linear algebraic techniques, involving subspace compressions and Hadamard products of matrices.</p>
+                    </div>
+                </div>
+                <div class="frontpage-thumb-frame frontpage-thumb-frame-2">
+                    <img src="Chowla_thumbnail_2.png" alt="Paper thumbnail" class="paper-thumbnail frontpage">
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>ETH Zürich</h3>
+                        <p class="timeline-meta">Ph.D. in Mathematics, advised by Prof. Benny Sudakov</p>
+                        <span class="timeline-date">2023–</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Princeton University</h3>
+                        <p class="timeline-meta">Bachelor of Arts in Mathematics</p>
+                        <span class="timeline-date">2019–2023</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Mathematical Grammar School, Belgrade, Serbia</h3>
+                        <span class="timeline-date">2013–2019</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Selected Awards</h2>
+
+            <div class="paper-card">
+                <div class="card-content">
+                <h3>Princeton University</h3>
+                <p class="authors">Valedictorian (2023)</p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>International Mathematical Olympiad (IMO)</h3>
+                    <p class="authors">2 Gold medals (2018, 2019) · 2 Silver medals (2016, 2017)</p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                <h3>International Physics Olympiad (IPhO)</h3>
+                <p class="authors">Silver medal (2019)</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleAbstract(button) {
+            const card = button.closest('.paper-card');
+            const abstract = card.querySelector('.abstract');
+            if (abstract.style.display === 'none' || abstract.style.display === '') {
+                abstract.style.display = 'block';
+                button.textContent = 'Hide abstract';
+            } else {
+                abstract.style.display = 'none';
+                button.textContent = 'Show abstract';
+            }
+        }
+    </script>
+
+</body>
+</html>

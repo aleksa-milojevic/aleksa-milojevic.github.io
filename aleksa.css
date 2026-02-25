@@ -1,0 +1,98 @@
+/** {
+    box-sizing: border-box;
+}*/
+
+/*body {
+	background-color: #BEACC2;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", "EB Garamond", "Times New Roman", serif;
+}*/
+
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+	font-weight: 500;
+}
+
+h2,h3 {
+	font-weight: 400;
+}
+
+b {
+	font-weight: 500;
+}
+
+a:link,a:visited {
+	color: #00008B;
+	text-decoration: none;
+}
+a:hover,a:active {
+	color: #621E78;
+	text-decoration: none;
+}
+
+body {
+	font-size: 110%;
+}
+
+a.w3-button {
+	color:black;
+}
+/*a:active {
+	color: #;
+	text-decoration: none;
+}*/
+
+.sublist {
+  font-size: 85%;
+}
+
+ul.mainlist {
+  list-style-type: none;
+  /*padding-left: 0;*/
+}
+
+ul.mainlist > ul {
+  margin-left: 15px;  
+}
+ul.mainlist > li {
+	margin-bottom: 3px;
+}
+
+/* Prevent nested li's from getting messed up */
+/*ul.mainlist > li::before {
+  content: "-";
+  margin-left: -15px;
+}*/
+
+/*.column {
+	float: left;
+	padding: 15px;
+}
+
+.navbar {
+	width: 20%;
+}
+
+.content {
+	width: 60%;
+	margin-right: 20%;
+}
+
+.navbar ul {
+	list-style-type: none;
+	margin: 0;
+	margin-left: 7pt;
+	padding: 0;
+}
+
+.header {
+	text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}*/

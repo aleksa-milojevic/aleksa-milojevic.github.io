@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksa Milojević | Publications</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <span class="nav-brand">ALEKSA MILOJEVIĆ</span>
+            <div class="nav-links">
+                <a href="../index.html">About</a>
+                <a href="#publications" class="active">Publications</a>
+                <a href="../expository/index.html">Expository</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="publications">
+            
+
+            <h2>Preprints</h2>
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Gaussian random graphs and Ramsey numbers</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2512.17718">arXiv</a>
+                            <a href="GaussianRamsey.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>We give a simple proof of the recent remarkable exponential improvement for Ramsey lower bounds, obtained by Ma, Shen and Xie. Our key ingredient is an alternative construction based on Gaussian random graphs, which allows us to simplify their analysis significantly. As a consequence of this simpler analysis, we also obtain better quantitative bounds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>From small eigenvalues to large cuts, and Chowla's cosine problem</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zhihan Jin, István Tomon and Shengtong Zhang</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2509.03490">arXiv</a>
+                            <a href="Chowla.pdf">PDF</a>
+                            <a href="https://www.quantamagazine.org/networks-hold-the-key-to-a-decades-old-problem-about-waves-20260128/">Quanta</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>We show that there exists an absolute constant \(\gamma > 0\) such that for every \(A \subseteq \mathbb{Z}_{>0}\) we have
+\[
+\min_{x \in [0,2\pi]} \sum_{a \in A} \cos(ax) \leq -\Omega(|A|^\gamma).
+\]
+This gives the first polynomial bound for Chowla's cosine problem from 1965. To show this, we prove structural statements about graphs whose smallest eigenvalue is small in absolute value. As another application, we show that any graph \(G\) with \(m\) edges and no clique of size \(m^{1/2-\delta}\) has a cut of size at least \(m/2 + m^{1/2+\varepsilon}\) for some \(\varepsilon = \varepsilon(\delta) > 0\). This proves a weak version of a celebrated conjecture of Alon, Bollobás, Krivelevich, and Sudakov. Our proofs are based on novel spectral and linear algebraic techniques, involving subspace compressions and Hadamard products of matrices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Cyclic subsets of tournaments</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter, Teng Liu and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2508.03634">arXiv</a>
+                            <a href="CyclicSubsetsTournaments.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>Let \(G\) be a Dirac graph, and let \(S\) be a vertex subset of \(G\), chosen uniformly at random. How likely is the induced subgraph \(G[S]\) to be Hamiltonian? This question, proposed by Erdős and Faudree in 1996, was recently resolved by Draganić, Keevash and Müyesser, in the setting of graphs. In this paper, we study a similar question for tournaments – if \(T\) is a tournament of high minimum degree, how likely is it for a random induced subtournament of \(T\) to be Hamiltonian? We prove an optimal bound on this probability, and extend the results to the regime where the subset is not sampled uniformly at random, but according to a \(p\)-biased measure.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>\(C_4\)-free subgraphs of high average degree with geometric applications</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter, Benny Sudakov, and István Tomon</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2506.23942">arXiv</a>
+                            <a href="C4-free.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>The Zarankiewicz problem, a cornerstone problem in extremal graph theory, asks for the maximum number of edges in an \(n\)-vertex graph that does not contain the complete bipartite graph \(K_{s,s}\). While the problem remains widely open in the case of general graphs, the past two decades have seen significant progress on this problem for various restricted graph classes – particularly those arising from geometric settings – leading to a deeper understanding of their structure. In this paper, we develop a new structural tool for addressing Zarankiewicz-type problems. More specifically, we show that for any positive integer \(k\), every graph with average degree \(d\) either contains an induced \(C_4\)-free subgraph with average degree at least \(k\), or it contains a \(d\)-vertex subgraph with \(\Omega_k(d^2)\) edges. As an application of this dichotomy, we propose a unified approach to a large number of Zarankiewicz-type problems in geometry, obtaining optimal bounds in each case.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Universality for transversal Hamilton cycles in random graphs</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Micha Christoph and Anders Martinsson</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2505.05385">arXiv</a>
+                            <a href="TransversalHamiltonCycles.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>A tuple \((G_1, \dots, G_n)\) of graphs on the same vertex set of size \(n\) is said to be Hamilton-universal if for every map \(\chi: [n] \to [n]\) there exists a Hamilton cycle whose \(i\)-th edge comes from \(G_{\chi(i)}\). Bowtell, Morris, Pehova and Staden proved an analog of Dirac's theorem in this setting, namely that if \(\delta(G_i) \geq (1/2 + o(1))n\) then \((G_1, \dots, G_n)\) is Hamilton-universal. Combining McDiarmid's coupling and a colorful version of the Friedman-Pippenger tree embedding technique, we establish a similar result in the setting of sparse random graphs, showing that there exists \(C\) such that if the \(G_i\) are independent random graphs sampled from \(G(n, p)\), where \(p \geq C \log n / n\), then \((G_1, \dots, G_n)\) is Hamilton-universal with high probability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Disjoint pairs in set systems and combinatorics of low rank matrices</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter, Benny Sudakov and István Tomon</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2411.13510">arXiv</a>
+                            <a href="DisjointPairsLowRankMatrices.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>We study and solve several problems in two closely related settings: set families in \(2^{[n]}\) with many disjoint pairs of sets and low rank matrices with many zero entries.
+                        • More than 40 years ago, Daykin and Erdős asked for the maximum number of disjoint pairs of sets in a family \(F \subseteq 2^{[n]}\) of size \(2^{(1/2+\delta)n}\) and conjectured it contains at most \(o(|F|^2)\) such pairs. This was proven by Alon and Frankl in 1985. In this paper we completely resolve this problem, proving an optimal dependence of the number of disjoint pairs on the size of family \(F\). We also prove the natural variant of the Daykin-Erdős conjecture in which disjoint pairs are replaced by pairs with intersection \(\lambda \neq 0\).
+                        • Motivated by a conjecture of Lovett related to the famous log-rank conjecture, Singer and Sudan asked to show that for two families \(A, B \subseteq 2^{[n]}\) with a positive constant fraction of pairs \((A, B) \in A \times B\) being disjoint, there are \(R \subset A\) and \(S \subset B\) such that all pairs \((R, S) \in R \times S\) are disjoint, and \(|R| \geq 2^{-O(\sqrt{n})} |A|\) and \(|S| \geq 2^{-O(\sqrt{n})} |B|\). We prove this conjecture in a strong quantitative form.
+                        • A long-standing problem in coding theory is to determine the largest size of an \(r\)-cover-free family, which is a family of subsets of \([n]\) such that no set is covered by a union of \(r\) other sets. Motivated by this question, Alon, Gilboa and Gueron asked to determine which distribution \(\mu\) over \(2^{[n]}\) minimizes the probability that \(A_0 \subseteq A_1 \cup \cdots \cup A_r\) where \(A_0, \ldots, A_r\) are random sets drawn independently from \(\mu\). Using ideas from the previous bulletpoint, we obtain the tight lower bound \(2^{-O(n/r)}\) for this probability.
+                        • We prove the following generalizations of the best known bounds for the log-rank conjecture. If \(M\) is an \(n \times n\) non-negative integer matrix of rank \(r\) in which the average of the entries is \(\varepsilon \leq 1/2\), then \(M\) contains an all-zero submatrix of size at least \(2^{-O(\sqrt{\varepsilon r})} n\). Unlike the known bounds for the log-rank conjecture, this result is optimal. Moreover, using similar methods, we also prove that any \(n \times n\) matrix of rank \(r\) with entries from \(\{0, \ldots, t\}\) contains a constant submatrix of size at least \(2^{-O(t \sqrt{r})} n\). Our proofs use probabilistic, entropy and discrepancy methods and explore connections to additive combinatorics and coding theory.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Point-variety incidences, unit distances and Zarankiewicz's problem for algebraic graphs</h3>
+                    <div class="authors-line">
+                        <p class="authors">With István Tomon and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2403.08756">arXiv</a>
+                            <a href="PointVarietyIncidences.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>In this paper we study the number of incidences between \(m\) points and \(n\) varieties in \(\mathbb{F}^d\), where \(\mathbb{F}\) is an arbitrary field, assuming the incidence graph contains no copy of \(K_{s,s}\). We also consider the analogous problem for algebraically defined graphs and unit distance graphs. First, we prove that if P is a set of \(m\) points and V is a set of \(n\) varieties in \(\mathbb{F}^d\), each of dimension d and degree at most \(\Delta\), and in addition the incidence graph is \(K_{s,s}\)-free, then the number of incidences satisfies \(I(P, V) \leq O_{d,\Delta,s}(m^{d+1} n + m)\). This bound is tight when s, \(\Delta\) are sufficiently large with respect to d, with an appropriate choice of \(\mathbb{F} = \mathbb{F}(m, n)\). We give two proofs of this upper bound, one based on the framework of the induced Turán problems and the other based on VC-dimension theory. In the second proof, we extend the celebrated result of Rónyai, Babai and Ganapathy on the number of zero-patterns of polynomials to the context of varieties, which might be of independent interest. We also resolve the problem of finding the maximum number of unit distances which can be spanned by a set of \(n\) points P in \(\mathbb{F}^d\) whose unit-distance graph is \(K_{s,s}\)-free, showing that it is \(\Theta_{d,s}(n^{2 - \lceil d/2 \rceil + 1})\). Finally, we obtain tight bounds on the maximum number of edges of a \(K_{s,s}\)-free algebraic graph defined over a finite field, thus resolving the Zarankiewicz problem for this class of graphs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Point-hyperplane incidences via extremal graph theory</h3>
+                    <div class="authors-line">
+                        <p class="authors">With István Tomon and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2401.06670">arXiv</a>
+                            <a href="PointHyperplaneIncidences.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>The study of counting point-hyperplane incidences in the d-dimensional space was initiated in the 1990's by Chazelle and became one of the central problems in discrete geometry. It has interesting connections to many other topics, such as additive combinatorics and theoretical computer science. Assuming a standard nondegeneracy condition, i.e., that no s points are contained in the intersection of s hyperplanes, the currently best known upper bound on the number of incidences of \(n\) points and \(m\) hyperplanes in \(\mathbb{R}^d\) is \(O_{d,s}((mn)^{1-1/(d+1)} + m + n)\). This bound by Apfelbaum and Sharir is based on geometrical space partitioning techniques. In this paper, we propose a novel combinatorial approach to estimate the number of point-hyperplane incidences over arbitrary fields using forbidden induced patterns in incidence graphs. Perhaps surprisingly, this approach matches the best known bounds in \(\mathbb{R}^d\) for many interesting values of \(m\), \(n\), \(d\), e.g. when \(m = n\) and \(d\) is odd. Moreover, in finite fields our bounds are sharp as a function of \(m\) and \(n\) in every dimension. We also study the size of the largest complete bipartite graph in point-hyperplane incidence graphs with a given number of edges and obtain optimal bounds as well.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>2026</h2>
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Long induced paths in \(K_{s,s}\)-free graphs</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter, Benny Sudakov and István Tomon</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2411.19173">arXiv</a>
+                            <a href="LongInducedPaths.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>More than 40 years ago, Galvin, Rival and Sands showed that every \(K_{s,s}\)-free graph containing an n-vertex path must contain an induced path of length \(f(n)\), where \(f(n) \to \infty\) as \(n \to \infty\). Recently, it was shown by Duron, Esperet and Raymond that one can take \(f(n) = (\log \log n)^{1/5 - o(1)}\). In this note, we give a short self-contained proof that a \(K_{s,s}\)-free graph with an n-vertex path contains an induced path of length at least \((\log \log n)^{1 - o(1)}\). Combined with the recent remarkable example of Couëtoux, Defrain, and Raymond, which provides an upper bound of \(O((\log \log n)^{1 + o(1)})\), this essentially resolves this old problem.</p>
+                    </div>
+                    <p class="journal">To appear in J. Graph Theory</p>
+                </div>
+            </div>
+
+            <h2>2025</h2>
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Kővári-Sós-Turán theorem for hereditary families</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter, István Tomon and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2401.10853">arXiv</a>
+                            <a href="KovariSosTuranHereditary.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>The celebrated Kővári-Sós-Turán theorem states that any \(n\) vertex graph containing no copy of the complete bipartite graph \(K_{s,s}\) has at most \(O_s(n^{2-1/s})\) edges. In the past two decades, motivated by the applications in discrete geometry and structural graph theory, a number of results demonstrated that this bound can be greatly improved if the graph satisfies certain structural restrictions. We propose the systematic study of this phenomenon, and state the conjecture that if \(H\) is a bipartite graph, then an induced \(H\)-free and \(K_{s,s}\)-free graph cannot have much more edges than an \(H\)-free graph. We provide evidence for this conjecture by considering trees, cycles, the cube graph, and bipartite graphs with degrees bounded by k on one side, obtaining in all the cases similar bounds as in the non-induced setting. Our results also have applications to the Erdős-Hajnal conjecture, the problem of finding induced \(C_4\)-free subgraphs with large degree and bounding the average degree of \(K_{s,s}\)-free graphs which do not contain induced subdivisions of a fixed graph.</p>
+                    </div>
+                    <p class="journal">J. Comb. Theory Ser. B, 172 (2025), 168-197</p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Larger nearly orthogonal sets over finite fields</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Ishay Haviv, Sam Mattheus and Yuval Wigderson</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2404.01057">arXiv</a>
+                            <a href="NearlyOrthogonal.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>For a field \(\mathbb{F}\) and integers d and k, a set \(A \subseteq \mathbb{F}^d\) is called \(k\)-nearly orthogonal if its members are non-self-orthogonal and every \(k + 1\) vectors of \(A\) include an orthogonal pair. We prove that for every prime \(p\) there exists some \(\delta = \delta(p) > 0\), such that for every field \(\mathbb{F}\) of characteristic \(p\) and for all integers \(k \geq 2\) and \(d \geq k\), there exists a \(k\)-nearly orthogonal set of at least \(d^{\delta \cdot k / \log k}\) vectors of \(\mathbb{F}^d\). The size of the set is optimal up to the \(\log k\) term in the exponent. We further prove two extensions of this result. In the first, we provide a large set \(A\) of non-self-orthogonal vectors of \(\mathbb{F}^d\) such that for every two subsets of \(A\) of size \(k + 1\) each, some vector of one of the subsets is orthogonal to some vector of the other. In the second extension, every \(k + 1\) vectors of the produced set \(A\) include \(\ell+1\) pairwise orthogonal vectors for an arbitrary fixed integer \(1 ≤ \ell ≤ k\). The proofs involve probabilistic and spectral arguments and the hypergraph container method.</p>
+                    </div>
+                    <p class="journal">Discrete Math. 348(4) (2025)</p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Power saving for the Brown-Erdős-Sós problem</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Oliver Janzer, Abhishek Methuku, and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2311.12765">arXiv</a>
+                            <a href="PowerSavingBES.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>Let \(f(n, v, e)\) denote the maximum number of edges in a 3-uniform hypergraph on \(n\) vertices which does not contain \(v\) vertices spanning at least \(e\) edges. A central problem in extremal combinatorics, famously posed by Brown, Erdős and Sós in 1973, asks whether \(f(n, e + 3, e) = o(n^2)\) for every \(e \geq 3\). A classical result of Sárközy and Selkow states that \(f(n, e + \lfloor \log_2 e \rfloor + 2, e) = o(n^2)\) for every \(e \geq 3\). This bound was recently improved by Conlon, Gishboliner, Levanzov and Shapira. Motivated by applications to other problems, Gowers and Long made the striking conjecture that \(f(n, e + 4, e) = O(n^{2-\varepsilon})\) for some \(\varepsilon = \varepsilon(e) > 0\). Conlon, Gishboliner, Levanzov and Shapira, and later, Shapira and Tyomkyn reiterated the following approximate version of this problem. What is the smallest \(d(e)\) for which \(f(n, e + d(e), e) = O(n^{2-\varepsilon})\) for some \(\varepsilon = \varepsilon(e) > 0\)? In this paper, we prove that for each \(e \geq 3\) we have \(f(n, e + \lfloor \log_2 e \rfloor + 38, e) = O(n^{2-\varepsilon})\) for some \(\varepsilon > 0\). This shows that one can already obtain power saving near the Sárközy-Selkow bound at the cost of a small additive constant.</p>
+                    </div>
+                    <p class="journal">Discret. Anal. (2025)</p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Canonical Ramsey numbers of sparse graphs</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Lior Gishboliner, Benny Sudakov and Yuval Wigderson</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2410.08644">arXiv</a>
+                            <a href="CanonicalRamsey.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>The canonical Ramsey theorem of Erdős and Rado implies that for any graph \(H\), any edge-coloring (with an arbitrary number of colors) of a sufficiently large complete graph \(K_N\) contains a monochromatic, lexicographic, or rainbow copy of \(H\). The least such \(N\) is called the Erdős–Rado number of \(H\), denoted by \(\mathrm{ER}(H)\). Erdős–Rado numbers of cliques have received considerable attention, and in this paper we extend this line of research by studying Erdős–Rado numbers of sparse graphs. For example, we prove that if \(H\) has bounded degree, then \(\mathrm{ER}(H)\) is polynomial in \(|V(H)|\) if \(H\) is bipartite, but exponential in general. We also study the closely-related problem of constrained Ramsey numbers. For a given tree \(S\) and given path \(P_t\), we study the minimum \(N\) such that every edge-coloring of \(K_N\) contains a monochromatic copy of \(S\) or a rainbow copy of \(P_t\). We prove a nearly optimal upper bound for this problem, which differs from the best known lower bound by a function of inverse-Ackermann type.</p>
+                    </div>
+                    <p class="journal">SIAM J. Discrete Math., 39 (2025)</p>
+                </div>
+            </div>
+
+            <h2>2024</h2>
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Connectivity of Old and New Models of Friends-and-Strangers Graphs</h3>
+                    <div class="authors-line">
+                        <p class="authors"></p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2210.03864">arXiv</a>
+                            <a href="FriendsAndStrangers.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>In this paper, we investigate the connectivity of friends-and-strangers graphs, which were introduced by Defant and Kravitz in 2020. We begin by considering friends-and-strangers graphs arising from two random graphs and consider the threshold probability at which such graphs attain maximal connectivity. We slightly improve the lower bounds on the threshold probabilities, thus disproving two conjectures of Alon, Defant and Kravitz. We also improve the upper bound on the threshold probability in the case of random bipartite graphs, and obtain a tight bound up to a factor of \(n^{o(1)}\). Further, we introduce a generalization of the notion of friends-and-strangers graphs in which vertices of the starting graphs are allowed to have multiplicities and obtain generalizations of previous results of Wilson and of Defant and Kravitz in this new setting.</p>
+                    </div>
+                    <p class="journal">Advances in Applied Math., 155 (2024)</p>
+                </div>
+            </div>
+
+            <h2>2023</h2>
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Structured Codes of Graphs</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Noga Alon, Anna Gujgiczer, János Körner, and Gábor Simonyi</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2202.06810">arXiv</a>
+                            <a href="StructuredCodesOfGraphs.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>We investigate the maximum size of graph families on a common vertex set of cardinality \(n\) such that the symmetric difference of the edge sets of any two members of the family satisfies some prescribed condition. We solve the problem completely for infinitely many values of \(n\) when the prescribed condition is connectivity or 2-connectivity, Hamiltonicity, or the containment of a spanning star. We also investigate local conditions that can be certified by looking at only a subset of the vertex set. In these cases a capacity-type asymptotic invariant is defined and when the condition is to contain a certain subgraph this invariant is shown to be a simple function of the chromatic number of this required subgraph. This is proven using classical results from extremal graph theory. Several variants are considered and the paper ends with a collection of open problems.</p>
+                    </div>
+                    <p class="journal">SIAM J. Discrete Math., 37 (2023), 379-403</p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <script>
+        function toggleAbstract(button) {
+            const card = button.closest('.paper-card');
+            const abstract = card.querySelector('.abstract');
+            if (abstract.style.display === 'none' || abstract.style.display === '') {
+                abstract.style.display = 'block';
+                button.textContent = 'Hide abstract';
+            } else {
+                abstract.style.display = 'none';
+                button.textContent = 'Show abstract';
+            }
+        }
+    </script>
+
+</body>
+</html>
