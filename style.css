@@ -9,6 +9,16 @@
     --frontpage-width: 1238px;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg-deep);
     color: var(--text-main);
@@ -16,12 +26,20 @@ body {
     margin: 0;
     line-height: 1.6;
     scroll-behavior: smooth;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* --- Navigation Styling --- */
 .glass-nav {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
     background: var(--glass);
@@ -36,18 +54,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px 24px;
+    flex-wrap: wrap;
 }
 
 .nav-brand {
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 0.9rem;
+    flex: 0 1 auto;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
     gap: 25px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav-links a {
@@ -88,24 +111,37 @@ body {
     max-width: var(--content-width);
     margin: 0 auto;
     padding: 120px 32px 60px;
+    width: 100%;
 }
 
 body.frontpage .container {
-    max-width: var(--frontpage-width);
+    max-width: min(var(--frontpage-width), 100%);
+}
+
+.hero,
+section {
+    scroll-margin-top: 110px;
 }
 
 .profile-area {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: clamp(24px, 4vw, 40px);
     margin-bottom: 60px;
 }
 
 body.frontpage .profile-area {
-    width: 115%;
+    width: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+}
+
+.hero-text,
+.card-content,
+.timeline-content {
+    min-width: 0;
 }
 
 body.frontpage .profile-area .hero-text {
@@ -117,8 +153,8 @@ body.frontpage .profile-area .bio-intro {
 }
 
 .profile-img {
-    width: 240px;
-    height: 240px;
+    width: clamp(190px, 28vw, 240px);
+    height: clamp(190px, 28vw, 240px);
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -126,8 +162,9 @@ body.frontpage .profile-area .bio-intro {
 
 h1 {
     font-family: 'Newsreader', serif;
-    font-size: 3rem;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
     margin: 5px 0;
+    line-height: 1.05;
 }
 
 .subtitle {
@@ -139,8 +176,8 @@ h1 {
 
 .bio-intro {
     color: #B8D4E0;
-    font-size: 1.1rem;
-    max-width: 500px;
+    font-size: clamp(1rem, 2.4vw, 1.1rem);
+    max-width: 560px;
 }
 
 /* --- Paper Cards --- */
@@ -159,19 +196,19 @@ h1 {
 .paper-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
-    padding: 2px 15px;
+    padding: 14px 18px;
     border-radius: 12px;
     margin-bottom: 5px;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 18px;
+    row-gap: 14px;
 }
 
 .paper-card.frontpage-card {
-    grid-template-columns: minmax(0, 2fr) 1fr;
-    column-gap: 20px;
-    padding: 2px 15px;
+    grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+    column-gap: 24px;
 }
 
 .paper-card.frontpage-card .card-content {
@@ -215,8 +252,9 @@ h1 {
 }
 
 .frontpage-thumb-frame {
-    width: 321px;
-    height: 215px;
+    width: min(100%, 321px);
+    height: auto;
+    aspect-ratio: 321 / 215;
     border: 2px solid var(--border);
     border-radius: 13px;
     overflow: hidden;
@@ -226,19 +264,21 @@ h1 {
 }
 
 .frontpage-thumb-frame-1 {
-    width: 215px;
-    height: 215px;
+    width: min(100%, 215px);
+    aspect-ratio: 1 / 1;
 }
 
 .frontpage-thumb-frame-2 {
-    width: 321px;
-    height: 215px;
+    width: min(100%, 321px);
+    aspect-ratio: 321 / 215;
 }
 
 .paper-card h3 {
     margin: 0;
     font-family: 'Newsreader', serif;
     font-size: 1.4rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
 }
 
 .authors {
@@ -253,12 +293,14 @@ h1 {
     align-items: center;
     margin: 5px 0;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .card-footer {
     display: flex;
     gap: 8px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .card-footer a {
@@ -297,18 +339,27 @@ h1 {
 }
 
 .abstract {
-    margin-top: 8px;
-    padding: 8px;
+    margin-top: 12px;
+    padding: 12px;
     background: rgba(255, 255, 255, 0.02);
     border-left: 3px solid var(--accent-teal);
     border-radius: 4px;
+    overflow-x: auto;
 }
 
 .abstract p {
     margin: 0;
     color: var(--text-muted);
     font-size: 0.85rem;
-    line-height: 1.4;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.abstract mjx-container {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4px;
 }
 
 /* --- Education Timeline --- */
@@ -378,10 +429,116 @@ h1 {
 }
 
 /* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .paper-card.frontpage-card {
+        grid-template-columns: 1fr;
+    }
+
+    .paper-card.frontpage-card .frontpage-thumb-frame {
+        order: -1;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
-    .profile-area { flex-direction: column; text-align: center; }
-    .timeline { padding-left: 0; --timeline-padding-left: 0px; --timeline-marker-left: 0px; }
-    .timeline-item { padding-left: 32px; }
+    .nav-content {
+        padding: 14px 20px;
+        justify-content: center;
+    }
+
+    .nav-brand {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 10px 12px;
+    }
+
+    .container {
+        padding: 132px 20px 44px;
+    }
+
+    .profile-area {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .paper-card {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: 0;
+        --timeline-padding-left: 0px;
+        --timeline-marker-left: 0px;
+    }
+
+    .timeline-item {
+        padding-left: 32px;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .nav-content {
+        padding: 12px 16px;
+    }
+
+    .nav-brand {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+    }
+
+    .container {
+        padding: 148px 16px 36px;
+    }
+
+    .profile-img {
+        width: 176px;
+        height: 176px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 11vw, 2.6rem);
+    }
+
+    .bio-intro {
+        font-size: 1rem;
+    }
+
+    .paper-card {
+        padding: 14px;
+    }
+
+    .paper-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .nav-links a,
+    .card-footer a,
+    .abstract-toggle {
+        font-size: 0.78rem;
+    }
+
+    .nav-links a.active {
+        padding: 5px 10px;
+    }
+
+    .authors-line {
+        align-items: flex-start;
+    }
+
+    .timeline-item {
+        padding-left: 28px;
+    }
+
+    .timeline-content {
+        padding: 12px 14px;
+    }
 }
 
 /* Section Heading Styles */
@@ -405,4 +562,14 @@ h1 {
     font-size: 0.9rem;
     font-style: italic;
     margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    #publications h2,
+    #education h2,
+    #expository h2,
+    #awards h2 {
+        font-size: 1.15rem;
+        letter-spacing: 1.5px;
+    }
 }
