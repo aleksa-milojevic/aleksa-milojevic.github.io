@@ -29,6 +29,22 @@
             <h2>Preprints</h2>
             <div class="paper-card">
                 <div class="card-content">
+                    <h3>Communication complexity of disjointness under product distributions</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter, Benny Sudakov and István Tomon</p>
+                        <div class="card-footer">
+                            <a href="CommunicationComplexityDisjointness.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>Determining the randomized (or distributional) communication complexity of disjointness is a central problem in communication complexity, having roots in the foundational work of Babai, Frankl, and Simon in the 1980s and culminating in the famous works of Kalyanasundaram-Schnitger and Razborov in 1992. However, the question of obtaining tight bounds for product distributions persisted until the more recent work of Bottesch, Gavinsky, and Klauck resolved it. In this note we revisit this classical problem and give a short, streamlined proof of the best bounds, with improved quantitative dependence on the error parameter. Our approach is based on a simple combinatorial lemma that may be of independent interest: if two sets drawn independently from two distributions are disjoint with non-negligible probability, then one can extract two subfamilies of reasonably large measure that are fully cross-disjoint (equivalently, a large monochromatic rectangle for disjointness).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
                     <h3>Gaussian random graphs and Ramsey numbers</h3>
                     <div class="authors-line">
                         <p class="authors">With Zach Hunter and Benny Sudakov</p>
@@ -62,6 +78,23 @@
 \min_{x \in [0,2\pi]} \sum_{a \in A} \cos(ax) \leq -\Omega(|A|^\gamma).
 \]
 This gives the first polynomial bound for Chowla's cosine problem from 1965. To show this, we prove structural statements about graphs whose smallest eigenvalue is small in absolute value. As another application, we show that any graph \(G\) with \(m\) edges and no clique of size \(m^{1/2-\delta}\) has a cut of size at least \(m/2 + m^{1/2+\varepsilon}\) for some \(\varepsilon = \varepsilon(\delta) > 0\). This proves a weak version of a celebrated conjecture of Alon, Bollobás, Krivelevich, and Sudakov. Our proofs are based on novel spectral and linear algebraic techniques, involving subspace compressions and Hadamard products of matrices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="card-content">
+                    <h3>Cyclic subsets of tournaments</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter, Teng Liu and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2508.03634">arXiv</a>
+                            <a href="CyclicSubsetsTournaments.pdf">PDF</a>
+                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
+                        </div>
+                    </div>
+                    <div class="abstract" style="display: none;">
+                        <p>Let \(G\) be a Dirac graph, and let \(S\) be a vertex subset of \(G\), chosen uniformly at random. How likely is the induced subgraph \(G[S]\) to be Hamiltonian? This question, proposed by Erdős and Faudree in 1996, was recently resolved by Draganić, Keevash and Müyesser, in the setting of graphs. In this paper, we study a similar question for tournaments – if \(T\) is a tournament of high minimum degree, how likely is it for a random induced subtournament of \(T\) to be Hamiltonian? We prove an optimal bound on this probability, and extend the results to the regime where the subset is not sampled uniformly at random, but according to a \(p\)-biased measure.</p>
                     </div>
                 </div>
             </div>
@@ -156,24 +189,6 @@ This gives the first polynomial bound for Chowla's cosine problem from 1965. To 
             </div>
 
             <h2>2026</h2>
-            <div class="paper-card">
-                <div class="card-content">
-                    <h3>Cyclic subsets of tournaments</h3>
-                    <div class="authors-line">
-                        <p class="authors">With Zach Hunter, Teng Liu and Benny Sudakov</p>
-                        <div class="card-footer">
-                            <a href="https://arxiv.org/abs/2508.03634">arXiv</a>
-                            <a href="CyclicSubsetsTournaments.pdf">PDF</a>
-                            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
-                        </div>
-                    </div>
-                    <div class="abstract" style="display: none;">
-                        <p>Let \(G\) be a Dirac graph, and let \(S\) be a vertex subset of \(G\), chosen uniformly at random. How likely is the induced subgraph \(G[S]\) to be Hamiltonian? This question, proposed by Erdős and Faudree in 1996, was recently resolved by Draganić, Keevash and Müyesser, in the setting of graphs. In this paper, we study a similar question for tournaments – if \(T\) is a tournament of high minimum degree, how likely is it for a random induced subtournament of \(T\) to be Hamiltonian? We prove an optimal bound on this probability, and extend the results to the regime where the subset is not sampled uniformly at random, but according to a \(p\)-biased measure.</p>
-                    </div>
-                    <p class="journal">To appear in Random Struct. Alg.</p>
-                </div>
-            </div>
-            
             <div class="paper-card">
                 <div class="card-content">
                     <h3>Long induced paths in \(K_{s,s}\)-free graphs</h3>
