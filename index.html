@@ -38,6 +38,66 @@
         </header>
         <section id="publications">
             <h2>Featured Work</h2>
+			<div class="paper-card frontpage-card">
+			    <div class="card-content">
+			        <h3>Distinguishability threshold for random geometric graphs</h3>
+			        <div class="authors-line">
+			            <p class="authors">With Zach Hunter and Benny Sudakov</p>
+			            <div class="card-footer">
+			                <a href="https://arxiv.org/abs/2607.22480">arXiv</a>
+			                <a href="publications/Distinguishing_Geometric_Graphs.pdf">PDF</a>
+			                <button
+			                    class="abstract-toggle"
+			                    data-label="summary"
+			                    onclick="toggleAbstract(this)"
+			                >
+			                    Show summary
+			                </button>
+			            </div>
+			        </div>
+			
+			        <div class="abstract paper-summary" style="display: none;">
+			            <p>The spherical random geometric graph (RGG) with parameters
+				        \(n\), \(d\) and \(p\) is defined by choosing \(n\) uniformly random
+				        points on the unit sphere in \(\mathbb{R}^d\) and connecting any two
+				        that are sufficiently close, where the distance threshold is chosen
+				        so that the probability of forming an edge is \(p\).
+				        <br><br>
+				
+				        The main question about these graphs is the following:
+				        <br>
+				        <strong>For which values of \(d\) is this model distinguishable from
+				        the Erdős–Rényi binomial random graph of the same density?</strong>
+				        <br><br>
+				
+				        This question was posed by Bubeck, Ding, Eldan and Rácz in 2016.
+				        They observed that triangles are slightly more likely to occur in the
+				        RGG than in the binomial random graph, and proposed a test that
+				        distinguishes between the two distributions whenever
+				        \(d\ll n^3p^3(\log(1/p))^3\).
+				        <br><br>
+				
+				        Moreover, they conjectured that when
+				        \(d\gg n^3p^3(\log(1/p))^3\), it is asymptotically impossible to
+				        distinguish between the RGG and binomial random graph distributions,
+				        since their total variation distance tends to zero.
+				        <br><br>
+				
+				        In this paper, we prove their conjecture whenever
+				        \(p\gg n^{-1/5}\), by establishing a precise upper bound on the
+				        probability that any fixed graph \(H\) is obtained under the RGG model.</p>
+			        </div>
+			    </div>
+			
+			    <div class="frontpage-thumb-frame">
+			        <img
+			            src="Geometric_graphs_thumbnail.png"
+			            alt="Random geometric graph on a sphere fading into a non-geometric random graph"
+			            class="paper-thumbnail frontpage"
+			        >
+			    </div>
+			</div>
+			
             <div class="paper-card frontpage-card">
                 <div class="card-content">
                     <h3>Gaussian random graphs and Ramsey numbers</h3>
@@ -138,19 +198,21 @@ This gives the first polynomial bound for Chowla's cosine problem from 1965. To 
         </section>
     </div>
 
-    <script>
-        function toggleAbstract(button) {
-            const card = button.closest('.paper-card');
-            const abstract = card.querySelector('.abstract');
-            if (abstract.style.display === 'none' || abstract.style.display === '') {
-                abstract.style.display = 'block';
-                button.textContent = 'Hide abstract';
-            } else {
-                abstract.style.display = 'none';
-                button.textContent = 'Show abstract';
-            }
+<script>
+    function toggleAbstract(button) {
+        const card = button.closest('.paper-card');
+        const abstract = card.querySelector('.abstract');
+        const label = button.dataset.label || 'abstract';
+
+        if (abstract.style.display === 'none' || abstract.style.display === '') {
+            abstract.style.display = 'block';
+            button.textContent = `Hide ${label}`;
+        } else {
+            abstract.style.display = 'none';
+            button.textContent = `Show ${label}`;
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
