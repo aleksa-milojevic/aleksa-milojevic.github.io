@@ -40,6 +40,25 @@
             <h2>Featured Work</h2>
             <div class="paper-card frontpage-card">
                 <div class="card-content">
+                    <h3>Distinguishability threshold for random geometric graphs</h3>
+                    <div class="authors-line">
+                        <p class="authors">With Zach Hunter and Benny Sudakov</p>
+                        <div class="card-footer">
+                            <a href="https://arxiv.org/abs/2607.22480">arXiv</a>
+                            <a href="publications/Distinguishing_Geometric_Graphs.pdf">PDF</a>
+                            <button class="abstract-toggle" data-label="summary" onclick="toggleAbstract(this)">Show summary</button>
+                        </div>
+                    </div>
+                    <div class="abstract paper-summary" style="display: none;">
+                        <p>We study when the hidden geometry in a spherical random geometric graph remains detectable from the graph alone. Resolving a conjecture of Bubeck, Ding, Eldan and Rácz across a broad sparse regime, we show that the model becomes indistinguishable from the Erdős–Rényi random graph at the predicted dimension threshold. Our proof also gives a sharper comparison for the probability of realizing any prescribed graph and identifies the signed triangle count as the leading correction term.</p>
+                    </div>
+                </div>
+                <div class="frontpage-thumb-frame">
+                    <img src="Geometric_graphs_thumbnail.png" alt="Random geometric graph on a sphere fading into a non-geometric random graph" class="paper-thumbnail frontpage">
+                </div>
+            </div>
+            <div class="paper-card frontpage-card">
+                <div class="card-content">
                     <h3>Gaussian random graphs and Ramsey numbers</h3>
                     <div class="authors-line">
                         <p class="authors">With Zach Hunter and Benny Sudakov</p>
@@ -142,12 +161,13 @@ This gives the first polynomial bound for Chowla's cosine problem from 1965. To 
         function toggleAbstract(button) {
             const card = button.closest('.paper-card');
             const abstract = card.querySelector('.abstract');
+            const label = button.dataset.label || 'abstract';
             if (abstract.style.display === 'none' || abstract.style.display === '') {
                 abstract.style.display = 'block';
-                button.textContent = 'Hide abstract';
+                button.textContent = `Hide ${label}`;
             } else {
                 abstract.style.display = 'none';
-                button.textContent = 'Show abstract';
+                button.textContent = `Show ${label}`;
             }
         }
     </script>
