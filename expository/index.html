@@ -30,18 +30,15 @@
 				<div class="card-content">
 					<h3>Perfect matchings in hypergraphs and Feige's inequality</h3>
 					<div class="authors-line">
-						<p class="authors">Expository note</p>
+						<p class="authors">Expository note · Joint work with Benny Sudakov</p>
 						<div class="card-footer">
-							<a href="https://arxiv.org/abs/2609.26401">arXiv</a>
+							<a href="https://arxiv.org/abs/2610.10380">arXiv</a>
 							<a href="Feige.pdf">PDF</a>
 							<button class="abstract-toggle" onclick="toggleAbstract(this)">Show abstract</button>
 						</div>
 					</div>
 					<div class="abstract" style="display: none;">
-                        <p>Feige's inequality gives an upper tail bound for sums of independent random variables, and is useful in many combinatorial contexts. The conjecture was proven last summer, with relatively complicated and not self-contained proofs. 
-
-							Our hope in this expository note was to present a simplified and self-contained proof, presented in a way which motivates the steps of the proof. We also discuss a combinatorial application of this inequality to the problem of perfect matchings in hypergraphs of large minimum degree.
-						</p>
+                        <p>Feige's inequality gives an upper tail bound for sums of independent nonnegative random variables and has many combinatorial applications. In this expository note, we present a simplified, self-contained proof and explain the motivation behind each step. We also discuss its application to perfect matchings in hypergraphs with large minimum degree.</p>
                     </div>
 				</div>
 			</div>
@@ -85,6 +82,20 @@
 			</div>
 		</section>
 	</div>
+
+    <script>
+        function toggleAbstract(button) {
+            const card = button.closest('.paper-card');
+            const abstract = card.querySelector('.abstract');
+            if (abstract.style.display === 'none' || abstract.style.display === '') {
+                abstract.style.display = 'block';
+                button.textContent = 'Hide abstract';
+            } else {
+                abstract.style.display = 'none';
+                button.textContent = 'Show abstract';
+            }
+        }
+    </script>
 
 </body>
 </html>
