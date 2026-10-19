@@ -362,6 +362,65 @@ h1 {
     padding-bottom: 4px;
 }
 
+/* --- Press Mentions --- */
+.press-entry {
+    margin: 32px 0 0;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-teal);
+    border-radius: 12px;
+}
+
+.press-intro {
+    margin: 0 0 8px;
+    color: #B8D4E0;
+    font-size: 0.95rem;
+}
+
+.press-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.press-list li {
+    display: flex;
+    flex-direction: column;
+}
+
+.press-list li > a {
+    font-family: 'Newsreader', serif;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    color: var(--text-main);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.press-list li > a:hover {
+    color: var(--accent-teal);
+}
+
+.press-meta {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.press-meta a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+}
+
+.press-meta a:hover {
+    color: var(--text-main);
+}
+
 /* --- Education Timeline --- */
 .timeline {
     position: relative;
