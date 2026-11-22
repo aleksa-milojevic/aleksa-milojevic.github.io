@@ -1,0 +1,31 @@
+/* A small exercise inside the existing sequence argument. */
+.decomposition-exercise{max-width:730px;margin:35px auto 40px;border-block:1px solid var(--line)}
+.decomposition-exercise>summary{cursor:pointer;padding:18px 0;font-family:var(--sans);font-size:13px}
+.decomposition-exercise>.dg-introduction{padding-top:12px}
+.decomposition-exercise .dg-introduction h3{margin-top:12px}
+.decomposition-game{padding:14px 0 24px}
+.decomposition-game .dg-topline{display:flex;justify-content:space-between;gap:20px;align-items:baseline;font-family:var(--sans);font-size:11px;color:var(--muted)}
+.decomposition-game .dg-topline p{margin:0;font-size:11px;line-height:1.5}
+.dg-sequence{display:flex;flex-wrap:wrap;gap:8px;padding:20px 0 24px;margin:0;list-style:none}
+.decomposition-game .dg-token{display:inline-flex;justify-content:center;align-items:center;min-width:34px;min-height:36px;padding:4px 7px;border:1.5px solid transparent;color:var(--ink);line-height:1}
+.dg-token .katex{font-size:1.05em}
+.decomposition-game .dg-sequence>[data-state="placed"]{color:var(--muted)}
+.decomposition-game .dg-sequence>[data-state="next"]{border-color:var(--orange);background:#bb4b2e08}
+.dg-rows{display:grid;gap:10px}
+.decomposition-game .dg-row{display:grid;grid-template-columns:55px minmax(0,1fr);gap:16px;align-items:center;min-height:62px;width:100%;padding:10px 15px;border:1px solid var(--line);background:transparent;color:var(--ink);text-align:left}
+.decomposition-game button.dg-row{cursor:pointer;font:inherit}
+.decomposition-game button.dg-row:hover:not(:disabled){background:#252b2b06;border-color:var(--muted)}
+.dg-row-name{font-size:15px;color:var(--muted)}
+.dg-row-values{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.decomposition-game .dg-head{border-color:var(--teal)}
+.decomposition-game .dg-row-attempt{border-color:var(--orange)}
+.decomposition-game .dg-new-row{width:100%;margin-top:10px;padding:15px;border:1px solid var(--line);font:12px var(--sans);background:transparent;color:var(--ink);cursor:pointer;text-align:left}
+.decomposition-game .dg-new-row:hover:not(:disabled){background:#252b2b06}
+.decomposition-game .dg-empty{font:13px/1.6 var(--sans);color:var(--muted);margin:5px 0 16px}
+.decomposition-game .dg-feedback{min-height:3.6em;margin:20px 0 18px;font-size:16px;line-height:1.65}
+.decomposition-game .dg-feedback-error{color:var(--orange)}
+.dg-actions{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+.decomposition-game .dg-actions button{padding:8px 0;background:none;border:0;border-bottom:1px solid var(--ink);color:var(--ink);font:11px/1.5 var(--sans);cursor:pointer}
+.decomposition-game .dg-actions .dg-primary{padding:9px 15px;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+.decomposition-game button:disabled{cursor:default;opacity:.55}
+.decomposition-game button:focus-visible{outline:2px solid var(--teal);outline-offset:4px}

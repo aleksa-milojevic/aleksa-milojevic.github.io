@@ -1,0 +1,37 @@
+/* The same mesh becomes a set of places, without introducing a second visual language. */
+.cmap-preview{padding-block:25px 55px;margin-top:25px;border-top:1px solid var(--line)}
+.cmap-scrolly{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(230px,1fr);gap:55px;align-items:start}
+.cmap-sticky{position:sticky;top:110px;margin:0;min-width:0;padding-top:14px}
+.cmap-drawing{width:100%;min-width:0;line-height:0}
+.cmap-drawing svg{display:block;width:100%;height:auto;overflow:visible}
+.cmap-face{stroke-width:1.1;vector-effect:non-scaling-stroke;stroke-linejoin:round;transition:fill .2s,stroke .2s}
+.cmap-outer{fill:none;stroke:var(--ink);stroke-width:1.1;vector-effect:non-scaling-stroke}
+.cmap-curve{fill:none;stroke:var(--orange);stroke-width:2.4;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.cmap-hole{fill:var(--paper);stroke:var(--ink);stroke-width:1.1;vector-effect:non-scaling-stroke}
+.cmap-arrow{fill:none;stroke:var(--teal);stroke-width:1.45;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.cmap-drawing text{font-family:var(--sans);fill:var(--muted);font-size:10px;letter-spacing:0}
+.cmap-drawing .cmap-heading{font-size:12px;fill:var(--ink)}
+.cmap-drawing .cmap-face-label{font-size:10px}
+.cmap-drawing .cmap-target-label{fill:var(--teal)}
+.cmap-curve-label>div{font-size:18px;line-height:1.2;color:var(--orange);padding-top:4px}
+.cmap-curve-label .katex{font-size:1em}
+.charging-overview-figure{max-width:1040px;margin:35px auto 0}
+.charging-overview-name{white-space:nowrap}
+.cmap-caption{font-family:var(--sans);font-size:12px;line-height:1.6;max-width:630px;margin-top:10px}
+#charge-map-preview:not([data-cmap-phase="assign"])+.cmap-caption{display:none}
+.cmap-steps{min-width:0}
+.cmap-step{min-height:44svh;display:flex;flex-direction:column;justify-content:center;padding-block:35px;font-size:17px;line-height:1.65}
+.cmap-step h3{font-size:26px;line-height:1.25;margin-bottom:18px}
+.cmap-step p{font-size:17px}
+@media(max-width:1050px){.cmap-scrolly{gap:30px;grid-template-columns:minmax(0,1.8fr) minmax(200px,1fr)}.cmap-step h3{font-size:24px}}
+@media(max-width:760px){
+  .cmap-preview{padding-block:20px 30px;margin-top:15px}
+  .cmap-scrolly{display:block}
+  .cmap-sticky{top:76px;z-index:4;background:var(--paper);padding-top:8px;padding-bottom:15px;border-bottom:1px solid var(--line)}
+  .cmap-caption{font-size:11px;line-height:1.5;margin-top:8px}
+  .cmap-step{min-height:63svh;padding-block:35px;justify-content:flex-end}
+  .cmap-step h3{font-size:25px}
+  .cmap-step p{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){.cmap-step{min-height:0;padding-block:20px}.cmap-sticky{position:static}}
+@media print{.cmap-scrolly{display:block}.cmap-sticky{position:static}.cmap-step{min-height:0;padding-block:15px}.cmap-preview{break-inside:avoid}}

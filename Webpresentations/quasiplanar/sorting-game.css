@@ -1,0 +1,47 @@
+/* Sorting game: put each integer into its row L_j. Every rule is scoped to .sg-root. */
+.sg-root{--sg-size:clamp(17px,calc(1.5vw + 12px),25px);--sg-label-w:clamp(28px,6vw,54px);--sg-pad:clamp(6px,1.6vw,14px);--sg-fill:#e4e6dc;--sg-edge:#c8cbc0;display:block;width:100%;max-width:100%;margin:34px 0 8px;color:var(--ink);font-family:var(--serif)}
+.sg-root:focus{outline:none}
+.sg-root .sg-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 18px;margin:0}
+.sg-root .sg-label{margin:0;font-family:var(--sans);font-size:11px;font-weight:550;line-height:1.45;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.sg-root .sg-count{margin:0;font-family:var(--sans);font-size:12px;line-height:1.45;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* The deck and the rows share one column geometry: equal side padding and a 1px border. */
+.sg-root .sg-track{display:grid;grid-template-columns:var(--sg-label-w) repeat(var(--sg-n,10),minmax(0,1fr));align-items:center;column-gap:0;width:100%;box-sizing:border-box}
+.sg-root .sg-deck{list-style:none;margin:0;padding:12px var(--sg-pad) 20px;border:1px solid transparent;box-sizing:border-box}
+.sg-root .sg-cell{grid-row:1;display:flex;align-items:center;justify-content:center;min-width:0;margin:0;padding:0}
+.sg-root .sg-num{display:inline-flex;flex:none;align-items:center;justify-content:center;box-sizing:border-box;width:min(1.5em,76%);aspect-ratio:1/1;border:1px solid transparent;border-radius:0;font-size:var(--sg-size);line-height:1;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums;transition:color .2s,border-color .2s}
+.sg-root .sg-num .katex{font-size:1em;line-height:1}
+.sg-root .sg-deck .sg-num{border-width:1.5px}
+.sg-root .sg-deck [data-state=placed] .sg-num{color:var(--muted);opacity:.75}
+.sg-root .sg-deck [data-state=current] .sg-num{border-color:var(--orange);background:#bb4b2e08}
+
+.sg-root .sg-rows{display:grid;gap:8px}
+.sg-root .sg-row{display:block;width:100%;margin:0;padding:0 var(--sg-pad);box-sizing:border-box;border:1px solid var(--line);border-radius:0;background:transparent;color:var(--ink);font:inherit;line-height:1;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none;transition:background-color .15s,border-color .15s}
+.sg-root .sg-row .sg-track{min-height:calc(var(--sg-size)*2.6)}
+@media(hover:hover){.sg-root .sg-row:hover{background:var(--sg-fill);border-color:var(--sg-edge)}}
+.sg-root .sg-row[aria-disabled=true]{cursor:default}
+.sg-root .sg-row[aria-disabled=true]:hover{background:transparent;border-color:var(--line)}
+.sg-root .sg-row:focus-visible,.sg-root .sg-button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.sg-root .sg-rows .sg-row.sg-wrong{border-color:var(--orange);animation:sg-nudge .26s ease-out}
+.sg-root .sg-row-name{grid-column:1;grid-row:1;justify-self:start;font-size:clamp(14px,calc(.5vw + 11px),18px);line-height:1;color:var(--muted)}
+.sg-root .sg-row .sg-head{border-color:var(--teal);border-radius:50%}
+.sg-root .sg-row .sg-hint{border-color:var(--orange);color:var(--orange)}
+
+/* Successor arrows: a thin line with a small open head, placed by percentages of the columns. */
+.sg-root .sg-arrows{grid-column:2/-1;grid-row:1;align-self:stretch;position:relative;font-size:var(--sg-size);color:var(--muted);pointer-events:none}
+.sg-root .sg-arrow{position:absolute;top:50%;height:0;margin-top:-.5px;border-top:1px solid currentColor}
+.sg-root .sg-arrow::after{content:"";position:absolute;right:1px;top:-3px;width:5px;height:5px;box-sizing:border-box;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+.sg-root .sg-message{min-height:84px;margin:20px 0 14px}
+.sg-root .sg-prompt{margin:0;font-size:18px;line-height:1.55}
+.sg-root .sg-feedback{margin:4px 0 0;font-size:16px;line-height:1.6;color:var(--orange)}
+.sg-root .sg-feedback:empty{display:none}
+.sg-root .sg-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px}
+.sg-root .sg-actions{display:flex;flex-wrap:wrap;gap:8px}
+.sg-root .sg-button{border-radius:0}
+.sg-root .sg-best{margin:0;font-family:var(--sans);font-size:12px;line-height:1.5;color:var(--muted);font-variant-numeric:tabular-nums}
+.sg-root .sg-best:empty{display:none}
+
+@keyframes sg-nudge{0%,100%{transform:none}30%{transform:translateX(-3px)}65%{transform:translateX(2px)}}
+@media(max-width:480px){.sg-root .sg-prompt{font-size:17px}.sg-root .sg-feedback{font-size:15px}.sg-root .sg-message{min-height:96px}}
+@media(prefers-reduced-motion:reduce){.sg-root .sg-rows .sg-row.sg-wrong{animation:none}.sg-root .sg-row,.sg-root .sg-num{transition:none}}

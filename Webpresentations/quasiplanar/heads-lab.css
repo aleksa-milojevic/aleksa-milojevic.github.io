@@ -1,0 +1,1173 @@
+/* heads-lab.css — styles for heads-lab.js (window.QuasiplanarHeads). Every class is prefixed hdl-. */
+
+.hdl {
+  --hdl-ivory: #f7f5ee;
+  --hdl-ink: #252b2b;
+  --hdl-orange: #bb4b2e;
+  --hdl-teal: #276b7c;
+  --hdl-muted: #8a8a7f;
+  --hdl-muted-ink: #5f5f56;           /* muted tone dark enough for small text on ivory (about 5.9:1) */
+  --hdl-paper: #fffdf8;
+  --hdl-line: rgba(37, 43, 43, 0.14);
+  --hdl-orange-wash: rgba(187, 75, 46, 0.13);
+  --hdl-teal-wash: rgba(38, 115, 106, 0.1);
+  --hdl-chip: 2.25rem;
+
+  box-sizing: border-box;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: clamp(0.85rem, 2.5vw, 1.6rem);
+  background: var(--hdl-ivory);
+  color: var(--hdl-ink);
+  border: 1px solid var(--hdl-line);
+  border-radius: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.hdl *,
+.hdl *::before,
+.hdl *::after {
+  box-sizing: inherit;
+}
+
+.hdl-sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- header ---------- */
+
+.hdl-header {
+  max-width: 48rem;
+}
+
+/* Editorial presentation: the argument lives in the article, the widget shows the run. */
+.hdl.hdl-compact{padding:0;border:0;border-radius:0;background:transparent;font-family:var(--sans,sans-serif);font-size:14px;line-height:1.6}
+.hdl-compact .hdl-compact-console{max-width:740px;margin:0 auto}
+.hdl-compact .hdl-controls{gap:8px;align-items:center;margin-top:20px}
+.hdl-compact .hdl-btn{border-radius:0;font-weight:400;font-size:12px;min-width:85px;min-height:42px;border-width:1px}
+.hdl.hdl-compact .hdl-btn--primary{background:var(--hdl-ink);color:var(--hdl-ivory)}
+.hdl-compact .hdl-out{margin-left:auto;font-size:12px;color:var(--hdl-muted-ink)}
+.hdl-compact .hdl-msg{border:0;background:none;padding:18px 0 0;min-height:125px;font-family:var(--serif,serif);font-size:18px;line-height:1.65}
+.hdl-compact .hdl-msg-step{font-family:var(--sans,sans-serif);font-weight:400;font-size:10px;letter-spacing:.1em;color:var(--hdl-muted-ink);margin-bottom:12px}
+.hdl-compact .hdl-runs{margin:20px 0 30px;gap:40px}
+.hdl-compact .hdl-run{background:transparent;border:0;border-radius:0;padding:0}
+.hdl-compact .hdl-runtitle{font-family:var(--serif,serif);font-size:23px;font-weight:400;line-height:1.3;margin-bottom:20px}
+.hdl-compact .hdl-runtitle > .hdl-run-subtitle{font-family:var(--sans,sans-serif);font-size:11px;font-weight:400;margin-top:7px}
+.hdl-compact .hdl-row{padding:15px 0 22px;gap:10px 9px;background:none;min-height:76px;border-left:0}
+.hdl-compact .hdl-row.is-touched{background:none}
+.hdl-compact .hdl-badge{border:0;padding:0;white-space:normal;font-size:10px;font-weight:400;background:none;flex-basis:100%;margin-left:0}
+.hdl-compact .hdl-chip{font-family:var(--mono,monospace);border-radius:0;background:none;font-weight:400;min-width:28px;height:30px;font-size:17px}
+.hdl-compact .hdl-chip.is-head{border-width:1.5px}
+.hdl-compact .hdl-head-tracks{max-width:740px;margin:0 auto 25px}
+.hdl-track-label{font-family:var(--serif,serif);font-size:22px;margin-bottom:12px!important}
+.hdl-track-help{font-size:12px;color:var(--hdl-muted-ink);margin-bottom:20px!important}
+.hdl-track{display:grid;grid-template-columns:1fr 1.5fr .7fr;align-items:center;border-top:1px solid var(--hdl-line);padding:12px 0;gap:12px;font-size:12px}
+.hdl-track strong{font-family:var(--mono,monospace);font-size:15px;font-weight:400;color:var(--hdl-teal)}
+.hdl-track small{text-align:right;font-size:10px;color:var(--hdl-muted-ink)}
+.hdl-compact .hdl-extra{max-width:740px;margin:30px auto;border-top:1px solid var(--hdl-line);padding-top:15px;font-size:12px}
+.hdl-compact .hdl-extra summary{cursor:pointer}
+.hdl-compact .hdl-extra .hdl-state{margin-top:25px}
+.hdl-compact .hdl-box,.hdl-compact .hdl-plot{border:0;border-radius:0;background:transparent;padding:15px 0}
+.hdl.hdl-compact .hdl-badge{border:0;border-radius:0;background:none;font-weight:400;font-size:11px}
+.hdl.hdl-compact .hdl-rowmeta{display:none}
+@media(max-width:760px){.hdl-compact .hdl-runs{grid-template-columns:1fr;gap:30px}.hdl-compact .hdl-compact-console{display:contents}.hdl-compact .hdl-controls{position:sticky;top:64px;z-index:5;background:var(--hdl-ivory);padding:10px 0;margin-top:10px;border-bottom:1px solid var(--hdl-line)}.hdl-compact .hdl-btn{min-width:70px;font-size:11px;padding:8px 10px}.hdl-compact .hdl-out{font-size:10px}.hdl-compact .hdl-msg{font-size:17px;min-height:0;margin-bottom:30px}.hdl-compact .hdl-row{min-height:72px}.hdl-compact .hdl-runtitle{font-size:24px}.hdl-compact .hdl-seq{gap:3px}.hdl-compact .hdl-seq .hdl-chip{min-width:0;font-size:16px}.hdl-compact .hdl-pos{font-size:10px}.hdl-track{grid-template-columns:.8fr 1.3fr .6fr;gap:8px;font-size:11px}.hdl-track strong{font-size:14px}.hdl-track-help{font-size:12px}}
+
+.hdl-kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hdl-teal);
+}
+
+.hdl-title {
+  margin: 0.2rem 0 0.45rem;
+  font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+  line-height: 1.25;
+  color: var(--hdl-ink);
+}
+
+.hdl-lede {
+  margin: 0;
+}
+
+.hdl-ink-miss {
+  color: var(--hdl-orange);
+  font-weight: 700;
+}
+
+/* ---------- top: console + plot ---------- */
+
+.hdl-top {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-areas: "plot console";
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1.1rem;
+}
+
+.hdl-console {
+  grid-area: console;
+  min-width: 0;
+}
+
+.hdl-plot {
+  grid-area: plot;
+  margin: 0;
+  min-width: 0;
+  padding: 0.5rem 0.6rem 0.6rem;
+  background: var(--hdl-paper);
+  border: 1px solid var(--hdl-line);
+  border-radius: 0.8rem;
+}
+
+.hdl-seqcap {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-seq {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+
+.hdl-seqitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.hdl-seq .hdl-chip {
+  width: 100%;
+  min-width: 0;
+  max-width: 2.6rem;
+  padding: 0;
+}
+
+.hdl-pos {
+  padding: 0 0.32rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: var(--hdl-muted-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-seqitem.is-todo .hdl-chip {
+  opacity: 0.5;
+}
+
+.hdl-seqitem.is-current .hdl-chip {
+  outline: 3px solid var(--hdl-teal);
+  outline-offset: 2px;
+}
+
+.hdl-seqitem.is-current .hdl-pos {
+  background: var(--hdl-ink);
+  color: var(--hdl-ivory);
+  font-weight: 700;
+}
+
+/* ---------- controls ---------- */
+
+.hdl-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.hdl-btn {
+  appearance: none;
+  min-height: 2.75rem;
+  min-width: 6.5rem;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--hdl-ink);
+  border-radius: 0.65rem;
+  background: var(--hdl-paper);
+  color: var(--hdl-ink);
+  font: inherit;
+  font-weight: 650;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.hdl-btn:hover {
+  background: var(--hdl-teal-wash);
+}
+
+.hdl-btn--primary {
+  background: var(--hdl-teal);
+  border-color: var(--hdl-teal);
+  color: var(--hdl-ivory);
+}
+
+.hdl-btn--primary:hover {
+  background: #1e5f57;
+}
+
+.hdl-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hdl-btn[aria-disabled="true"]:hover {
+  background: var(--hdl-paper);
+}
+
+.hdl-btn--primary[aria-disabled="true"]:hover {
+  background: var(--hdl-teal);
+}
+
+.hdl-btn:focus-visible,
+.hdl-range:focus-visible {
+  outline: 3px solid var(--hdl-ink);
+  outline-offset: 2px;
+}
+
+.hdl-timeline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.hdl-timeline label {
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-range {
+  width: 100%;
+  min-height: 2.75rem;
+  margin: 0;
+  background: transparent;
+  accent-color: var(--hdl-teal);
+}
+
+.hdl-out {
+  min-width: 3.2rem;
+  font-weight: 700;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-out--solo {
+  margin: 0.6rem 0 0;
+  text-align: left;
+}
+
+.hdl-snapshot {
+  margin: 0.55rem 0 0;
+  font-size: 0.9rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-snapshot strong {
+  color: var(--hdl-ink);
+}
+
+.hdl-msg {
+  margin: 0.7rem 0 0;
+  padding: 0.75rem 0.9rem;
+  background: var(--hdl-paper);
+  border: 1px solid var(--hdl-line);
+  border-left: 4px solid var(--hdl-teal);
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.hdl-msg[data-kind="removal"],
+.hdl-msg[data-kind="move"],
+.hdl-msg[data-kind="split"] {
+  border-left-color: var(--hdl-orange);
+}
+
+.hdl-msg-step {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hdl-teal);
+}
+
+.hdl-msg[data-kind="removal"] .hdl-msg-step,
+.hdl-msg[data-kind="move"] .hdl-msg-step,
+.hdl-msg[data-kind="split"] .hdl-msg-step {
+  color: var(--hdl-orange);
+}
+
+/* ---------- integer chips ---------- */
+
+.hdl-chip {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--hdl-chip);
+  height: var(--hdl-chip);
+  padding: 0 0.3rem;
+  border: 1.5px solid var(--hdl-ink);
+  border-radius: 0.55rem;
+  background: var(--hdl-paper);
+  color: var(--hdl-ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-chip.is-out {
+  border-style: dashed;
+  border-color: var(--hdl-muted);
+  color: var(--hdl-muted-ink);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 5px, rgba(138, 138, 127, 0.16) 5px 7px),
+    var(--hdl-paper);
+}
+
+.hdl-chip.is-head {
+  border-width: 3px;
+}
+
+.hdl-chip.is-inFp {
+  border-color: var(--hdl-teal);
+}
+
+.hdl-chip.is-miss {
+  border-color: var(--hdl-orange);
+  background: var(--hdl-orange-wash);
+}
+
+.hdl-chip.is-closed {
+  border-style: solid;
+  border-color: var(--hdl-muted);
+}
+
+.hdl-chip[data-tag]::after {
+  content: attr(data-tag);
+  position: absolute;
+  top: calc(100% + 0.16rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--hdl-ink);
+}
+
+.hdl-chip.is-inFp[data-tag]::after {
+  color: var(--hdl-teal);
+}
+
+.hdl-chip.is-miss[data-tag]::after {
+  color: var(--hdl-orange);
+}
+
+.hdl-chip.is-closed[data-tag]::after {
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-chip.is-dis::before {
+  content: "";
+  position: absolute;
+  top: -0.34rem;
+  right: -0.34rem;
+  width: 0.66rem;
+  height: 0.66rem;
+  border-radius: 50%;
+  background: var(--hdl-orange);
+  border: 2px solid var(--hdl-ivory);
+}
+
+.hdl-chip.is-new {
+  box-shadow: 0 0 0 4px rgba(38, 115, 106, 0.3);
+}
+
+.hdl-chip--sm {
+  min-width: 1.9rem;
+  height: 1.9rem;
+  font-size: 0.9rem;
+  border-radius: 0.45rem;
+}
+
+.hdl-chip--xs {
+  min-width: 1.45rem;
+  height: 1.45rem;
+  padding: 0 0.2rem;
+  font-size: 0.72rem;
+  border-radius: 0.35rem;
+}
+
+.hdl-chip--xs.is-head {
+  border-width: 2.5px;
+}
+
+.hdl-chip--xs.is-dis::before {
+  top: -0.26rem;
+  right: -0.26rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-width: 1.5px;
+}
+
+/* ---------- chain rows ---------- */
+
+.hdl-runs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.hdl-run {
+  min-width: 0;
+  padding: 0.75rem 0.8rem 0.35rem;
+  background: var(--hdl-paper);
+  border: 1px solid var(--hdl-line);
+  border-radius: 0.8rem;
+}
+
+.hdl-runtitle {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.hdl-runtitle > .hdl-run-subtitle {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex with wrapping: the status badge drops to its own line when the panel is narrow.
+   The row gap leaves room for the HEAD tag printed under each head chip. */
+.hdl-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.15rem 0.6rem;
+  padding: 0.55rem 0.4rem 1.4rem;
+  border-top: 1px solid var(--hdl-line);
+  border-left: 3px solid transparent;
+}
+
+.hdl-row:first-child {
+  border-top: 0;
+}
+
+.hdl-row.is-touched {
+  background: var(--hdl-teal-wash);
+}
+
+.hdl-row.is-miss {
+  border-left-color: var(--hdl-orange);
+}
+
+.hdl-rowlabel {
+  display: flex;
+  flex: 0 0 3.9rem;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.hdl-rowname {
+  font-weight: 700;
+}
+
+.hdl-rowmeta {
+  font-size: 0.72rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-chain {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  min-width: 0;
+  min-height: var(--hdl-chip);
+}
+
+.hdl-link {
+  flex: none;
+  width: 0.75rem;
+  height: 0;
+  border-top: 2px solid rgba(37, 43, 43, 0.55);
+}
+
+.hdl-link.is-lost {
+  width: 1rem;
+  border-top: 2px dashed var(--hdl-orange);
+}
+
+.hdl-row.is-closed .hdl-chain::after {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: var(--hdl-chip);
+  margin-left: 0.4rem;
+  border-radius: 2px;
+  background: var(--hdl-muted);
+}
+
+.hdl-placeholder {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-badge {
+  margin-left: auto;
+  padding: 0.22rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 99px;
+  font-size: 0.74rem;
+  font-weight: 650;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hdl-badge.is-open {
+  color: var(--hdl-teal);
+}
+
+.hdl-badge.is-miss {
+  color: var(--hdl-orange);
+  background: var(--hdl-orange-wash);
+}
+
+.hdl-badge.is-closed {
+  color: var(--hdl-muted-ink);
+}
+
+/* ---------- keys and legends ---------- */
+
+.hdl-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.1rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-keys li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hdl-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+  margin-top: 0.35rem;
+  font-size: 0.76rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-key {
+  display: inline-block;
+  flex: none;
+  width: 1.3rem;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.hdl-keys .hdl-key {
+  margin-right: 0;
+}
+
+.hdl-key--band {
+  height: 0.7rem;
+  background: rgba(38, 115, 106, 0.12);
+  border-top: 1px dashed var(--hdl-teal);
+}
+
+.hdl-key--link {
+  height: 0;
+  border-top: 2px solid rgba(37, 43, 43, 0.55);
+}
+
+.hdl-key--lost {
+  height: 0;
+  border-top: 2px dashed var(--hdl-orange);
+}
+
+.hdl-key--wall {
+  width: 5px;
+  height: 1.2rem;
+  border-radius: 2px;
+  background: var(--hdl-muted);
+}
+
+.hdl-key--spent,
+.hdl-key--live,
+.hdl-key--free {
+  width: 0.9rem;
+  height: 0.7rem;
+  border-radius: 2px;
+}
+
+.hdl-key--spent {
+  background: var(--hdl-teal);
+}
+
+.hdl-key--live {
+  background: var(--hdl-orange);
+}
+
+.hdl-key--free {
+  border: 1.5px solid var(--hdl-muted);
+}
+
+/* ---------- position vs size plot ---------- */
+
+.hdl-psvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 24rem;
+  overflow: visible;
+}
+
+.hdl-psvg text {
+  font-family: inherit;
+}
+
+.hdl-pband {
+  fill: var(--hdl-teal);
+  fill-opacity: 0.07;
+}
+
+.hdl-pcut {
+  stroke: var(--hdl-teal);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+
+.hdl-pcutlabel {
+  font-size: 8.5px;
+  font-weight: 700;
+  fill: var(--hdl-teal);
+}
+
+.hdl-paxis {
+  fill: none;
+  stroke: var(--hdl-ink);
+  stroke-width: 1;
+}
+
+.hdl-ptick {
+  font-size: 8px;
+  fill: var(--hdl-muted-ink);
+}
+
+.hdl-plabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  fill: var(--hdl-muted-ink);
+}
+
+.hdl-plink {
+  stroke: var(--hdl-ink);
+  stroke-opacity: 0.45;
+  stroke-width: 1.5;
+}
+
+.hdl-plink.is-out {
+  stroke: var(--hdl-muted);
+  stroke-opacity: 0.9;
+  stroke-dasharray: 3 2;
+}
+
+.hdl-plost {
+  fill: none;
+  stroke: var(--hdl-orange);
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+
+.hdl-pdot {
+  stroke-width: 1.5;
+}
+
+.hdl-pt text {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.hdl-pt.is-kept .hdl-pdot {
+  fill: var(--hdl-ink);
+  stroke: var(--hdl-ink);
+}
+
+.hdl-pt.is-kept text {
+  fill: var(--hdl-ivory);
+}
+
+.hdl-pt.is-out .hdl-pdot {
+  fill: var(--hdl-paper);
+  stroke: var(--hdl-muted);
+  stroke-dasharray: 2.5 2;
+}
+
+.hdl-pt.is-out text {
+  fill: var(--hdl-muted-ink);
+}
+
+.hdl-pt.is-todo {
+  opacity: 0.38;
+}
+
+.hdl-pt.is-todo.is-kept .hdl-pdot {
+  fill: var(--hdl-paper);
+}
+
+.hdl-pt.is-todo.is-kept text {
+  fill: var(--hdl-ink);
+}
+
+.hdl-pt.is-dis .hdl-pdot {
+  stroke: var(--hdl-orange);
+  stroke-width: 2.5;
+}
+
+.hdl-pring {
+  fill: none;
+  stroke: var(--hdl-teal);
+  stroke-width: 2.5;
+}
+
+/* ---------- state: heads and potential ---------- */
+
+.hdl-state {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hdl-box {
+  min-width: 0;
+  padding: 0.8rem 0.9rem;
+  background: var(--hdl-paper);
+  border: 1px solid var(--hdl-line);
+  border-radius: 0.8rem;
+}
+
+.hdl-box h4 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.hdl-sets {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.hdl-set {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hdl-set dt {
+  font-size: 0.8rem;
+  line-height: 1.25;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-setname {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--hdl-ink);
+}
+
+.hdl-set.is-missing .hdl-setname {
+  color: var(--hdl-orange);
+}
+
+.hdl-set dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+}
+
+.hdl-set.is-check dd {
+  font-weight: 700;
+  color: var(--hdl-teal);
+}
+
+.hdl-set.is-check.is-fail dd {
+  color: var(--hdl-orange);
+}
+
+.hdl-missitem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.hdl-misstag {
+  font-size: 0.74rem;
+  font-weight: 650;
+  color: var(--hdl-orange);
+}
+
+.hdl-empty {
+  font-size: 1.05rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-formula {
+  margin: 0 0 0.6rem;
+}
+
+.hdl-formula-main {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-formula-note {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-meter {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.hdl-mgroup {
+  display: grid;
+  flex: 1 1 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.hdl-cell {
+  height: 0.95rem;
+  border: 1.5px solid var(--hdl-muted);
+  border-radius: 3px;
+}
+
+.hdl-cell.is-spent {
+  background: var(--hdl-teal);
+  border-color: var(--hdl-teal);
+}
+
+.hdl-cell.is-live {
+  background: var(--hdl-orange);
+  border-color: var(--hdl-orange);
+}
+
+.hdl-meter-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  margin: 0.4rem 0 0.65rem;
+  font-size: 0.76rem;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-counts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0 0 0.55rem;
+}
+
+.hdl-counts div {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--hdl-line);
+  border-radius: 0.55rem;
+}
+
+.hdl-counts dt {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-counts dd {
+  margin: 0.1rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-counts small {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-bound {
+  margin: 0 0 0.65rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--hdl-teal-wash);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-ledger-title {
+  margin: 0.2rem 0 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-ledger {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.84rem;
+}
+
+.hdl-ledger li {
+  display: grid;
+  grid-template-columns: 3.7rem minmax(0, 1fr) auto;
+  gap: 0.5rem;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0.4rem;
+}
+
+.hdl-ledger li.is-current {
+  background: var(--hdl-teal-wash);
+  font-weight: 650;
+}
+
+.hdl-ledger li.hdl-ledger-empty {
+  display: block;
+  font-style: italic;
+  color: var(--hdl-muted-ink);
+}
+
+.hdl-lstep {
+  color: var(--hdl-muted-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-ldelta {
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.hdl-ledger .is-up .hdl-ldelta {
+  color: var(--hdl-orange);
+}
+
+.hdl-ledger .is-down .hdl-ldelta {
+  color: var(--hdl-teal);
+}
+
+/* ---------- notes ---------- */
+
+.hdl-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hdl-line);
+  font-size: 0.92rem;
+}
+
+.hdl-notes h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
+}
+
+.hdl-notes p {
+  margin: 0 0 0.55rem;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 52rem) {
+  .hdl-top {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "console" "plot";
+  }
+
+  .hdl-runs,
+  .hdl-state,
+  .hdl-notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hdl-psvg {
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 30rem) {
+  .hdl {
+    --hdl-chip: 2rem;
+    border-radius: 0.75rem;
+  }
+
+  .hdl-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 0.5rem;
+  }
+
+  .hdl-rowlabel {
+    flex-basis: 3.1rem;
+  }
+
+  .hdl-link {
+    width: 0.55rem;
+  }
+
+  .hdl-link.is-lost {
+    width: 0.8rem;
+  }
+
+  .hdl-set {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+
+  .hdl-counts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hdl-seq .hdl-chip {
+    font-size: 0.88rem;
+  }
+}
+
+/* ---------- motion: only when the user has not asked to reduce it ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hdl-btn,
+  .hdl-cell {
+    transition: background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+  }
+
+  .hdl-chip.is-new {
+    animation: hdl-pop 0.32s ease-out;
+  }
+
+  .hdl-ledger li.is-current {
+    animation: hdl-fade 0.45s ease-out;
+  }
+}
+
+@keyframes hdl-pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes hdl-fade {
+  from {
+    background-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hdl *,
+  .hdl *::before,
+  .hdl *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- forced colours: keep missing heads distinguishable without hue ---------- */
+
+@media(min-width:1100px){
+  .heads-walk .hdl.hdl-compact .hdl-msg{font-size:16px;line-height:1.55;min-height:100px;padding-top:12px;margin-top:8px}
+  .heads-walk .hdl.hdl-compact .hdl-runs{gap:22px;margin:16px 0 22px}
+  .heads-walk .hdl.hdl-compact .hdl-runtitle{font-size:18px;line-height:1.25;margin-bottom:10px}
+  .heads-walk .hdl.hdl-compact .hdl-runtitle > .hdl-run-subtitle{font-size:10px;line-height:1.4;margin-top:5px}
+  .heads-walk .hdl.hdl-compact .hdl-row{padding:9px 0 20px;min-height:60px;gap:7px}
+  .heads-walk .hdl.hdl-compact .hdl-badge{display:none}
+  .heads-walk .hdl.hdl-compact .hdl-head-tracks{margin-bottom:12px}
+  .heads-walk .hdl.hdl-compact .hdl-track-label{font-size:19px;margin-bottom:8px!important}
+  .heads-walk .hdl.hdl-compact .hdl-track-help{font-size:11px;line-height:1.4;margin-bottom:12px!important}
+  .heads-walk .hdl.hdl-compact .hdl-track{padding:8px 0;font-size:11px}
+  .heads-walk .hdl.hdl-compact .hdl-track strong{font-size:13px}
+  .heads-walk .hdl.hdl-compact .hdl-extra{margin:15px auto 0;padding-top:12px;font-size:11px}
+}
+
+@media (forced-colors: active) {
+  .hdl-chip.is-miss {
+    border-style: double;
+    border-width: 4px;
+  }
+
+  .hdl-link.is-lost,
+  .hdl-key--lost {
+    border-top-style: dotted;
+  }
+
+  .hdl-cell.is-spent,
+  .hdl-cell.is-live,
+  .hdl-key--wall {
+    forced-color-adjust: none;
+  }
+}

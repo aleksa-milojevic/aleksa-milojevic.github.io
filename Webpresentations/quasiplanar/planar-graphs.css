@@ -1,0 +1,83 @@
+/* Explorer pictures share the article's restrained curves and ordinary-scroll rhythm. */
+.pgraph-section,.explorer-charge-section{text-align:left}
+#planar-graphs{padding-bottom:0}
+.growth-story{margin-top:64px;margin-bottom:65px}
+.growth-scrolly{display:block}
+.growth-figure{position:sticky;top:var(--section-sticky-top,120px);height:calc(100svh - var(--section-sticky-top,120px));width:100%;margin:0;min-width:0;padding:12px 0 20px;display:flex;align-items:center;justify-content:center;background:var(--paper);z-index:1}
+.growth-figure #planar-bound-plot{width:min(672px,100%);min-width:0}
+.growth-figure svg{display:block;width:100%;height:auto}
+.growth-reading{position:relative;z-index:2}
+.growth-reading .growth-history{padding:0;scroll-margin-top:var(--section-sticky-top,120px)}
+.growth-reading .section-number{margin-bottom:28px}
+.growth-step{min-height:90svh;display:flex;flex-direction:column;justify-content:flex-end;padding:50px 0 70px;font-size:18px;line-height:1.65}
+.growth-card{width:min(650px,100%);margin-inline:auto;padding:24px 0;background:var(--paper)}
+.growth-card:has(>#growth-planar-intro:empty){background:none}
+.growth-card p:last-child{margin-bottom:0}
+.growth-step h3{font-size:28px;line-height:1.25;margin-bottom:20px}
+.pgraph-chart-context{font-family:var(--sans);font-size:11px;color:var(--muted);margin-bottom:6px}
+.pgraph-math{font-size:11px;line-height:1.25;white-space:nowrap;color:var(--muted)}
+.pgraph-math .katex{font-size:1em}
+.pgraph-math-axis{font-size:14px;color:var(--ink)}
+.pgraph-math-line{font-size:12px;color:var(--teal)}
+.pgraph-math-upper{font-size:12px;color:var(--orange)}
+.pgraph-math-illustrative{font-size:13px;color:var(--ink)}
+.growth-step .theorem-line{text-align:left;margin:0;padding:28px 0;border:0}
+.growth-step .theorem-line .explorer-theorem-words{font-size:22px;line-height:1.45;letter-spacing:-.02em;font-style:normal}
+.growth-step .theorem-line .explorer-theorem-example{font-size:52px;margin:22px 0 8px}
+.pgraph-math-object{overflow:visible}
+.pgraph-plot-controls.is-inactive{visibility:hidden;pointer-events:none}
+.explorer-charge-walk{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(230px,1fr);gap:65px;align-items:start;margin-top:28px}
+.pgraph-section .pgraph-figure{position:static;display:block;float:none;clear:both;width:100%;height:auto;padding:0;margin:32px 0 40px}
+.pgraph-summary-row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:center;margin:28px 0}
+.pgraph-summary-row .pgraph-figure{margin:0}
+.pgraph-bound-copy .tex-math{display:inline-block;white-space:nowrap}
+.pgraph-section .pgraph-drawing{display:block;width:360px;max-width:100%;min-width:0;margin-inline:0}
+.pgraph-question{font-size:clamp(28px,3.2vw,42px);line-height:1.2}
+.explorer-charge-figure{position:sticky;top:var(--section-sticky-top,110px);min-width:0;padding-top:12px}
+.pgraph-drawing svg{display:block;width:100%;height:auto}
+.pgraph-edge{fill:none;stroke:var(--teal);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pgraph-vertex{fill:var(--ink)}
+.explorer-charge-step{min-height:49svh;padding-block:45px;display:flex;flex-direction:column;justify-content:center;font-size:18px;line-height:1.65}
+.explorer-charge-step h3{font-size:28px;line-height:1.25;margin-bottom:18px}
+.explorer-charge-step p{font-size:18px}
+.pgraph-note{margin-top:25px}
+.pgraph-plot-figure{display:block;margin:28px 0 32px;clear:both}
+#planar-graphs .pgraph-plot-figure{margin-top:64px}
+.pgraph-plot-figure svg{display:block;width:100%;height:auto}
+.pgraph-plot-figure text{font-family:var(--sans);font-size:11px;fill:var(--muted)}
+.pgraph-plot-axis{fill:none;stroke:#8c928c;stroke-width:1.7;stroke-linecap:round}
+.pgraph-plot-line{fill:none;stroke:var(--teal);stroke-width:2.1}
+.pgraph-plot-upper{fill:none;stroke:var(--orange);stroke-width:2}
+.pgraph-plot-illustrative{fill:none;stroke:var(--ink);stroke-width:2}
+.pgraph-plot-gap{fill:var(--wash);opacity:.8;stroke:none}
+.pgraph-plot-guide{fill:none;stroke:var(--orange);stroke-width:1;stroke-dasharray:3 5;opacity:.4}
+.pgraph-plot-point{fill:var(--orange)}
+.pgraph-plot-figure .pgraph-plot-point-label,.pgraph-plot-figure .pgraph-plot-upper-label{fill:var(--orange);font-size:12px}
+.pgraph-plot-figure .pgraph-plot-line-label{fill:var(--teal);font-size:12px}
+.pgraph-plot-figure .pgraph-plot-variable{font-family:var(--serif);font-style:italic;font-size:14px;fill:var(--ink)}
+.pgraph-plot-controls{display:flex;align-items:center;gap:22px;margin-top:10px;font-family:var(--sans);font-size:12px;line-height:1.5}
+.pgraph-plot-controls label{display:flex;flex:1;align-items:center;gap:14px}
+.pgraph-plot-controls input{flex:1;min-width:70px;accent-color:var(--teal)}
+.pgraph-plot-controls output{white-space:nowrap}
+.explorer-charge-figure .cmap-caption{max-width:600px}
+@media(max-width:1000px){.explorer-charge-walk{gap:35px;grid-template-columns:minmax(0,1.35fr) minmax(210px,1fr)}}
+@media(max-width:760px){
+  .growth-story{margin-top:52px}
+  .growth-figure{padding-bottom:16px}
+  .growth-step{min-height:95svh;padding:35px 0 55px;font-size:17px}
+  .growth-card{padding:22px 0}
+  .growth-step h3{font-size:26px}
+  #planar-graphs .pgraph-plot-figure{margin-top:52px}
+  .pgraph-summary-row{display:block}
+  .pgraph-summary-row .pgraph-figure{margin:25px 0}
+  .pgraph-plot-controls{align-items:stretch;flex-direction:column;gap:8px}
+  .pgraph-section .pgraph-drawing{width:100%;max-width:360px}
+  .explorer-charge-walk{display:block;margin-top:20px}
+  .explorer-charge-figure{top:var(--section-sticky-top,76px);z-index:4;background:var(--paper);padding:8px 0 15px;border-bottom:1px solid var(--line)}
+  .explorer-charge-step{min-height:65svh;padding-block:35px;justify-content:flex-end}
+  .explorer-charge-step h3{font-size:26px}
+  .explorer-charge-step p{font-size:17px}
+  .pgraph-figure figcaption,.explorer-charge-figure figcaption{font-size:11px;margin-top:8px}
+}
+@media(prefers-reduced-motion:reduce){.explorer-charge-figure{position:static}.explorer-charge-step{min-height:0;padding-block:22px}}
+@media print{.growth-figure{position:static}.growth-step{min-height:0;padding-block:20px}.explorer-charge-walk{display:block}.explorer-charge-figure{position:static}.explorer-charge-step{min-height:0;padding-block:18px}}

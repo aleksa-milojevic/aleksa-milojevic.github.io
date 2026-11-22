@@ -1,0 +1,67 @@
+/* The Expert route from Increasing chains onwards: scroll-driven figures in the
+   style of "The playing field" and "Two linear orders". */
+.xr-chapter{border-top:1px solid var(--line)}
+.xr-chapter>.wrap>.section-number{width:min(650px,100%);margin-inline:auto}
+html[data-route="expert"] .xr-title{font-size:clamp(24px,2.5vw,30px)}
+.xr-block{margin-top:6px}
+.xr-block>.prose+.xr-scrolly{margin-top:10px}
+
+/* One sticky figure, short paragraphs beside it. */
+.xr-scrolly{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:70px;position:relative;margin:30px auto 50px;width:min(100%,1100px)}
+.xr-figure{margin:0;position:sticky;top:var(--section-sticky-top,135px);align-self:start;height:calc(100svh - var(--section-sticky-top,135px) - 16px);display:flex;flex-direction:column;justify-content:center}
+.xr-plot{position:relative;width:100%}
+.xr-plot svg{display:block;width:100%;height:auto;max-height:calc(100svh - var(--section-sticky-top,135px) - 50px);overflow:visible}
+.xr-plot svg text{font-family:var(--serif);font-size:17px;fill:var(--ink)}
+.xr-plot svg .xr-small{font-family:var(--sans);font-size:12px;fill:var(--muted)}
+.xr-plot svg :is(g,path,circle,line,text,foreignObject,polygon,rect){transition:opacity .3s ease,fill .3s ease,stroke .3s ease,stroke-width .3s ease}
+.xr-steps{padding:34svh 0 30svh}
+.xr-step{min-height:62svh;display:flex;flex-direction:column;justify-content:center;opacity:.32;transition:opacity .35s}
+.xr-step.is-active{opacity:1}
+.xr-step p{max-width:21em;font-size:18px;text-wrap:pretty}
+.xr-step p+p{margin-top:.8em}
+
+/* Questions use the block panels of the route selector. */
+.xr-quiz{max-width:21em}
+.xr-quiz .branch-buttons{margin:14px 0 12px}
+.xr-quiz .branch-buttons button{font-family:inherit;font-size:1em;min-width:64px;transition:background .2s,border-color .2s}
+.xr-quiz .branch-buttons button:hover{background:var(--wash)}
+.xr-quiz .branch-buttons button[aria-pressed=true]{border-color:#c8cbc0;background:#e4e6dc;color:var(--ink)}
+.sequence-section .xr-quiz .branch-buttons button:hover{background:#e4e6dc}
+.xr-feedback{display:grid}
+.xr-feedback>p{grid-area:1 / 1;align-self:start;margin:0}
+.xr-feedback>[aria-hidden="true"]{visibility:hidden}
+
+/* Formal definitions, as in the left order. */
+.xr-definition{margin-top:20px}
+.xr-definition ol{padding-inline-start:1.6em;margin:1em 0}
+.xr-definition li+li{margin-top:.45em}
+.xr-game-intro{margin-top:10px}
+#sorting-game{margin:34px auto 20px;max-width:900px}
+.xr-claim{margin:1.1em 0;padding-left:18px;border-left:2px solid var(--line)}
+.xr-claim strong{font-weight:500;font-family:var(--sans);font-size:12px;letter-spacing:.04em;display:block;margin-bottom:4px;color:var(--muted)}
+
+/* The restriction lemma and its example. */
+.xr-restriction{margin:30px auto 40px;max-width:900px}
+.xr-restriction .branch-buttons{justify-content:center;margin:0 0 18px}
+.xr-restriction .branch-buttons button[aria-pressed=true]{border-color:#c8cbc0;background:#e4e6dc;color:var(--ink)}
+.xr-restriction .branch-buttons button:hover{background:var(--wash)}
+.xr-restriction-controls{display:flex;align-items:center;gap:22px;border-top:1px solid var(--line);padding-top:16px;margin-top:10px;font-family:var(--sans);font-size:12px;line-height:1.6}
+.xr-restriction-controls label{display:flex;flex-direction:column;min-width:130px}
+.xr-restriction-controls output{color:var(--muted);font-size:11px}
+.xr-restriction-controls input{flex:1}
+.xr-restriction-readout{min-width:250px;text-align:right;font-family:var(--serif);font-size:17px}
+.xr-ladder-figure{margin:26px auto 30px;max-width:820px}
+.xr-count{margin-top:35px}
+
+@media (prefers-reduced-motion:reduce){
+  .xr-plot svg *,.xr-step{transition:none!important}
+}
+@media (max-width:760px),(max-height:459px){
+  .xr-scrolly{display:block;margin:25px 0}
+  .xr-figure{position:static;height:auto;margin-bottom:20px}
+  .xr-plot svg{max-height:none}
+  .xr-steps{padding:0}
+  .xr-step{min-height:0;opacity:1;padding:10px 0}
+  .xr-restriction-controls{flex-wrap:wrap}
+  .xr-restriction-readout{text-align:left;min-width:0}
+}

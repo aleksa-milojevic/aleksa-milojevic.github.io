@@ -1,0 +1,28 @@
+/* A single, quiet section overview below the masthead. */
+html[data-route="curious"] [data-nav-routes]:not([data-nav-routes~="curious"]),
+html[data-route="mathematician"] [data-nav-routes]:not([data-nav-routes~="mathematician"]),
+html[data-route="expert"] [data-nav-routes]:not([data-nav-routes~="expert"]){display:none!important}
+html[data-route-pending] .section-nav-bar,
+html[data-route-pending] .section-nav-spacer,
+.section-nav-bar[hidden],.section-nav-spacer[hidden]{display:none!important}
+.chapter-nav.section-nav-bar{position:fixed;inset:var(--section-header-height,73px) 0 auto;z-index:19;display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:22px;width:100%;max-width:100%;padding:0 40px;min-height:46px;background:#eeeee7;border-block:0;border-bottom:1px solid var(--line);font-family:var(--sans);font-size:11px;line-height:1.4}
+.section-nav-label{flex:0 0 auto;color:var(--muted);font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.section-nav-links{display:flex;align-items:stretch;gap:25px;min-width:0;max-width:100%;flex:1 1 auto;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.chapter-nav.section-nav-bar .section-nav-links>a{display:flex;align-items:center;flex:0 0 auto;gap:8px;min-width:0;padding:15px 0 13px;border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none;color:var(--muted)}
+.chapter-nav.section-nav-bar .section-nav-links>a:hover{color:var(--ink)}
+.chapter-nav.section-nav-bar .section-nav-links>a[aria-current="location"]{color:var(--ink);border-bottom-color:var(--orange)}
+.chapter-nav.section-nav-bar .section-nav-number{margin:0;color:inherit;font:9px/1 var(--mono);opacity:.8}
+.section-nav-spacer{height:var(--section-nav-height,46px)}
+.section-nav-heading::before{content:attr(data-section-number) " / "}
+html.section-nav-enabled{scroll-padding-top:calc(var(--section-header-height,73px) + var(--section-nav-height,46px) + 20px)}
+.section-nav-enabled #story>section{scroll-margin-top:0}
+.section-nav-enabled .sticky-figure,.section-nav-enabled .network-figure,.section-nav-enabled .pgraph-figure,.section-nav-enabled .explorer-charge-figure{top:var(--section-sticky-top,135px)}
+.section-nav-enabled .heads-walk>#heads-lab,.section-nav-enabled .charge-scrolly>.wide-figure{top:var(--section-sticky-top,135px)}
+@media(max-width:760px){
+  .chapter-nav.section-nav-bar{padding-inline:22px;gap:16px;min-height:43px;font-size:11px}
+  .section-nav-links{gap:20px}
+  .chapter-nav.section-nav-bar .section-nav-links>a{padding-block:14px 11px}
+  .section-nav-label{font-size:8px}
+}
+@media(max-width:370px){.chapter-nav.section-nav-bar{padding-inline:16px;gap:12px}.section-nav-links{gap:17px}}
+@media print{.chapter-nav.section-nav-bar,.section-nav-spacer{display:none!important}.section-nav-heading::before{content:attr(data-section-number) " / "}}
